@@ -1,8 +1,8 @@
 # Custom Output Directories and Files
-#screenshots/
-#results/
-#Old/
-#*screenshot.png
+screenshots/
+results/
+Old/
+*screenshot.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
