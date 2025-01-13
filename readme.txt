@@ -1,1 +1,0 @@
-Command: Projects\Book_Extractor_Test\tests>robot --outputdir results test_cases/extract_test.robot
