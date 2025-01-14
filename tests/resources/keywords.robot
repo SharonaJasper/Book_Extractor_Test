@@ -43,7 +43,7 @@ Load All Pages
         Input Text        xpath=//*[@id="jump_page"]    ${index}   True
         Execute JavaScript    let inputField = document.getElementById('jump_page'); let event = new KeyboardEvent('keydown', {key: 'Enter', keyCode: 13, code: 'Enter', which: 13, bubbles: true, cancelable: true}); inputField.dispatchEvent(event);
         Wait Until Element Is Visible   id=page${index}
-        IF  ${SAVE_SCREENSHOTS} == True
+        IF  ${SAVE_SCREENSHOTS} == True and ${SCREENSHOT_WHILE_LOADING} == True
             Get Image    ${index}    page${index}
         END
     END
@@ -54,12 +54,12 @@ Get Web Page Elements
     Sleep  2s
     RETURN    ${web_elements}
 
-Get Image 
+Get Image         ##if ${SCREENSHOT_WHILE_LOADING} = True & ${SAVE_SCREENSHOTS} = True
     [Arguments]    ${index}    ${element_id}
     Scroll Element Into View        id=page${index}
     Capture Screenshot For Element    ${element_id}    ${index}
 
-Loop Through Webelements For Images   #unused for now
+Loop Through Webelements For Images     #if ${SCREENSHOT_WHILE_LOADING} = False & ${SAVE_SCREENSHOTS} = True
     [Arguments]    ${web_elements}
     Log  ${web_elements}[0]
     FOR    ${index}    IN RANGE    0    ${web_elements.__len__()}

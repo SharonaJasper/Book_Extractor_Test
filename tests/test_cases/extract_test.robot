@@ -16,6 +16,10 @@ Get Images Scribd
     Click Zoom Out
     ${range_number}=    Determine Range
     Load All Pages    ${range_number}
+    IF  ${SAVE_SCREENSHOTS} == True and ${SCREENSHOT_WHILE_LOADING} == False
+        ${web_elements}=    Get Web Page Elements
+        Loop Through Webelements For Images    ${web_elements}
+    END
     #Convert PNGs to PDF --> start script manually
     IF  ${SAVE_HTML}
         ${web_elements}=    Get Web Page Elements

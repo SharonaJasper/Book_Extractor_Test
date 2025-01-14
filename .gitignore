@@ -4,6 +4,7 @@ results/
 Old/
 *screenshot.png
 *_file.html
+*book.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
