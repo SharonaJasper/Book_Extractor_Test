@@ -1,5 +1,5 @@
 *** Settings ***
-Library    BuiltIn
+#Library    BuiltIn
 Library    OperatingSystem
 Library    String
 Library    Process

@@ -3,6 +3,7 @@ screenshots/
 results/
 Old/
 *screenshot.png
+*_file.html
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
