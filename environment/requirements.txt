@@ -1,6 +1,6 @@
-pillow
-robotframework
-robotframework-seleniumlibrary
-selenium
+pillow===11.1.0
+robotframework===7.2
+robotframework-seleniumlibrary===6.7.0
+selenium===4.27.1
 
 
