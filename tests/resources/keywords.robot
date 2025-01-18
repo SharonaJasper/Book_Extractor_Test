@@ -40,9 +40,10 @@ Load All Pages
         #Clear inputfield, put current index in inputfield and enter
         Click Element    xpath=//*[@id="jump_page"]
         Execute JavaScript    let inputField = document.getElementById('jump_page'); inputField.value = '';
-        Input Text        xpath=//*[@id="jump_page"]    ${index}   True
+        Input Text        xpath=//*[@id="jump_page"]    ${index}    True
         Execute JavaScript    let inputField = document.getElementById('jump_page'); let event = new KeyboardEvent('keydown', {key: 'Enter', keyCode: 13, code: 'Enter', which: 13, bubbles: true, cancelable: true}); inputField.dispatchEvent(event);
         Wait Until Element Is Visible   id=page${index}
+        Execute JavaScript    document.body.style.zoom = "100%"
         IF  ${SAVE_SCREENSHOTS} == True and ${SCREENSHOT_WHILE_LOADING} == True
             Get Image    ${index}    page${index}
         END
